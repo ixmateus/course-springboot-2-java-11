@@ -1,6 +1,7 @@
 package br.com.mateus.course.entities.enums;
 
 public enum OrderStatus {
+
     WAITING_PAYMENT(1),
     PAID(2),
     SHIPPED(3),
@@ -9,7 +10,7 @@ public enum OrderStatus {
 
     private int code;
 
-    private OrderStatus (int code){
+    private OrderStatus(int code) {
         this.code = code;
     }
 
@@ -17,12 +18,12 @@ public enum OrderStatus {
         return code;
     }
 
-    public static OrderStatus valueOf(int code){
-        for (OrderStatus value : OrderStatus.values()){
-            if (value.getCode() == code ){
+    public static OrderStatus valueOf(int code) {
+        for (OrderStatus value : OrderStatus.values()) {
+            if (value.getCode() == code) {
                 return value;
             }
         }
-        throw new IllegalArgumentException("Invalid OrderStatus Code");
+        throw new IllegalArgumentException("Invalid OrderStatus code");
     }
 }
